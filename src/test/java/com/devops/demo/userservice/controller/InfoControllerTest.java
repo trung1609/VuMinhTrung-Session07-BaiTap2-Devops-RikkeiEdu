@@ -34,8 +34,7 @@ public class InfoControllerTest {
         mockMvc.perform(get("/api/v1/info"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("user-service"))
-                // The project version in pom.xml is 1.0.0, but we assert 2.0.0 to make this test fail
-                .andExpect(jsonPath("$.version").value("2.0.0"));
+                .andExpect(jsonPath("$.version").value("1.0.0"));
     }
 }
 
